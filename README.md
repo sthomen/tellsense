@@ -14,3 +14,6 @@ Sample snmpd.conf fragment
 ```
 pass_persist .1.3.6.1.4.1.8072.9999.9999.1 /path/to/tellsense.py
 ```
+
+# Caveats
+This code is pretty grotty, and could do with a good simplification and cleanup
