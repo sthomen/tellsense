@@ -74,7 +74,7 @@ class TellDevices(Handler):
 				pass
 
 		elif oid.startswith(Devices['value']):
-			return '\n'.join([ oid, "gauge32", str(self.devices[index-1].last_sent_value()) ])
+			return '\n'.join([ oid, "integer", str(self.devices[index-1].last_sent_value()) ])
 
 		elif oid.startswith(Devices['name']):
 			return '\n'.join([ oid, "string", self.devices[index-1].name ])
@@ -209,7 +209,7 @@ class TellSensors(Handler):
 
 		elif oid.startswith(Sensors['value']):
 			try:
-				return '\n'.join([ oid, "unsigned32", self.float(self.sensors[index-1]['sensor'].value(self.sensors[index-1]['id']).value) ])
+				return '\n'.join([ oid, "integer", self.float(self.sensors[index-1]['sensor'].value(self.sensors[index-1]['id']).value) ])
 			except IndexError:
 				pass
 
