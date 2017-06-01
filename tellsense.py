@@ -148,7 +148,7 @@ class TellDevices(Handler):
 					result=0
 				else:
 					# XXX if the name contains 'dim', then it probably is a dimmer
-					if self.devices[index-1].model.find("dim"):
+					if self.devices[index-1].model.find("dim") > 0:
 						self.devices[index-1].dim(value)
 						result=value
 					else:
